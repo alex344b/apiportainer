@@ -2,9 +2,12 @@
 services:
   apiapp:
     image: apiapp
+    build:
+      dockerfile: apiapp/Dockerfile
     ports:
-      - "70:70"
-
+      - "5002:80"
+    environment:
+      ASPNETCORE_URLS: "http://+"
     deploy:
       restart_policy:
         condition: on-failure
