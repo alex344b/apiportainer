@@ -1,0 +1,6 @@
+﻿services:
+  apiapp:
+    image: apiapp
+    build:
+      context: .
+      dockerfile: apiapp/Dockerfile
