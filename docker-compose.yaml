@@ -1,6 +1,10 @@
-﻿services:
+﻿version: '3.8'
+services:
   apiapp:
     image: apiapp
-    build:
-      context: .
-      dockerfile: apiapp/Dockerfile
+    ports:
+      - "70:70"
+
+    deploy:
+      restart_policy:
+        condition: on-failure
